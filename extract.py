@@ -17,6 +17,7 @@ if __name__ == '__main__':
     # 
     # names = ['白音小雪','12235923神乐咩啊','11588230白上吹雪','13946381夏色祭','14222920Kanna','14275133赤井心','14917277凑阿夸','21302352静凛','4634167犬山玉姬','3822389有栖mana'，‘21133979大神mio’，‘21302477本间向日葵’ 21304638神楽七奈 21107534癒月巧可 21130785百鬼绫目 21132965紫咲诗音 14052636shiori 14327465花園serena 21302469椎名唯华 7962050森永miu 4664126萝卜子 12770821千草hana 21302479绿仙 94744高槻律 21224291安堂inari 21195793mendako 14578426战斗吧歌姬 9680769物述有栖-爱丽丝 21219990亚绮-罗森 21144047樱巫女 10209381田中姬铃木雏 21131813夜空梅露 21129632大空昴 180784千鈴mei 1321846魔宵sakyu 14892076龙胆尊 11261960mugi 13744134天神子兔音 11110277YuNi 6080883笹木咲 4895312Paryi 6632844ENA 11575621陆婉莹 21317030音俣ruka 14893乌拉の帝国 3889934爱夏なつ 337374綾奈なな 3827429心斎桥オクト 4078398來夢めると 13576775Siva_小虾鱼_ 15142311莉姬リジ爱米莉 704808Overidea_China
     yesterday = str(getYesterday(1))
+    cleanday = str(getYesterday(3))
     #yesterday = "2019-04-22"
     resultdir = "C:/Users/Administrator/Documents/blive/"
     with open(resultdir+"comments.csv","a",encoding='utf_8_sig') as f:
@@ -32,6 +33,8 @@ if __name__ == '__main__':
         dhhtimes = ""
         dhhprice = ""
         filedir = "C:/Users/Administrator/AppData/Roaming/danmaku/Platforms/bilibili/history/"+uid[k]+'/'+yesterday
+        cleandir = "C:/Users/Administrator/AppData/Roaming/danmaku/Platforms/bilibili/history/"+uid[k]+'/'+cleanday
+        os.remove(cleandir+"/total")
         length = len([name for name in os.listdir(filedir) if os.path.isfile(os.path.join(filedir, name))])
         for i in range(length):
             with open(filedir+"/bundle"+str(i),"r",encoding='utf_8') as f:
