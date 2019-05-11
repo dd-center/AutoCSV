@@ -112,7 +112,7 @@ if __name__ == '__main__':
             else:
                 f.write("\n")
         with open(resultdir+"income.csv","a",encoding='utf_8_sig') as f:
-            f.write(str('%0.3f' % (money))+',')
+            f.write(str('%0.3f' % (money)))
             if(k<(len(uid)-1)):
                 f.write(',')            
             else:
